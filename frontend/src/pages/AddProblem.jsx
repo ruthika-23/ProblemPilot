@@ -25,7 +25,7 @@ const AddProblem = () => {
     setLoading(true);
     
     try {
-      await axios.post('http://localhost:5000/api/problems', formData);
+      await axios.post('https://promblempilot.onrender.com/api/problems', formData);
       navigate('/problems');
     } catch (error) {
       alert('Failed to add problem');

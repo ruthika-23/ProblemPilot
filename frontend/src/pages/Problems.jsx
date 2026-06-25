@@ -18,7 +18,7 @@ const Problems = () => {
     const fetchProblems = async () => {
       try {                       
         const res = await axios.get(
-          "http://localhost:5000/api/problems",
+          "https://promblempilot.onrender.com/api/problems",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -61,7 +61,7 @@ const Problems = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Delete this problem?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/problems/${id}`);
+        await axios.delete(`https://promblempilot.onrender.com/api/problems/${id}`);
         setProblems(problems.filter((p) => p._id !== id));
       } catch (e) {
         alert('Failed to delete');
@@ -86,7 +86,7 @@ const Problems = () => {
     if (!selectedProblem) return;
     try {
       const res = await axios.put(
-        `http://localhost:5000/api/problems/${selectedProblem._id}`,
+        `https://promblempilot.onrender.com/api/problems/${selectedProblem._id}`,
         {
           ...selectedProblem,
           notes: notesDraft,

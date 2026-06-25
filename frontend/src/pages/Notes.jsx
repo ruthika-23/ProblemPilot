@@ -16,7 +16,7 @@ const Notes = () => {
     try {
 
       const res = await axios.get(
-        "http://localhost:5000/api/notes",
+        "https://promblempilot.onrender.com/api/notes",
         {
           headers: {
             Authorization:
@@ -50,7 +50,7 @@ const Notes = () => {
     try {
 
       await axios.post(
-        "http://localhost:5000/api/notes",
+        "https://promblempilot.onrender.com/api/notes",
         {
           title,
           content,

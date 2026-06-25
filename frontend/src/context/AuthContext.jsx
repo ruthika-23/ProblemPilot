@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }) => {
 },[token]);
 
   const login = async (email, password) => {
-    const res = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+    const res = await axios.post('https://promblempilot.onrender.com/api/auth/login', { email, password });
     const { token: newToken, ...userData } = res.data;
     localStorage.setItem('token', newToken);
     setToken(newToken);
@@ -35,7 +35,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const register = async (username, email, password) => {
-    const res = await axios.post('http://localhost:5000/api/auth/register', { username, email, password });
+    const res = await axios.post('https://promblempilot.onrender.com/api/auth/register', { username, email, password });
     const { token: newToken, ...userData } = res.data;
     localStorage.setItem('token', newToken);
     setToken(newToken);
@@ -54,7 +54,7 @@ export const AuthProvider = ({ children }) => {
     const token = localStorage.getItem("token");
 
     const res = await axios.put(
-      "http://localhost:5000/api/auth/profile",
+      "https://promblempilot.onrender.com/api/auth/profile",
       data,
       {
         headers: {
@@ -80,7 +80,7 @@ useEffect(() => {
       try {
 
         const res = await axios.get(
-          "http://localhost:5000/api/auth/profile",
+          "https://promblempilot.onrender.com/api/auth/profile",
           {
             headers:{
               Authorization:`Bearer ${token}`

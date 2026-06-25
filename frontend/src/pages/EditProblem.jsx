@@ -22,7 +22,7 @@ const EditProblem = () => {
       try {
         const res = await axios.get(
 
-        `http://localhost:5000/api/problems/${id}`,
+        `https://promblempilot.onrender.com/api/problems/${id}`,
 
         {
         headers:{
@@ -49,7 +49,7 @@ const EditProblem = () => {
     
     try {
       await axios.put(
-      `http://localhost:5000/api/problems/${id}`,formData,
+      `https://promblempilot.onrender.com/api/problems/${id}`,formData,
       {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`

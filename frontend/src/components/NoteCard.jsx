@@ -13,7 +13,7 @@ const NoteCard = ({ note, fetchNotes }) => {
     try {
 
       await axios.delete(
-        `http://localhost:5000/api/notes/${note._id}`,
+        `https://promblempilot.onrender.com/api/notes/${note._id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

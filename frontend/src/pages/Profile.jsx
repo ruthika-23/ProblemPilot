@@ -40,7 +40,7 @@ const Profile = () => {
         const token = localStorage.getItem("token");
 
         const problems = await axios.get(
-          "http://localhost:5000/api/problems",
+          "https://promblempilot.onrender.com/api/problems",
           {
             headers: {
               Authorization: `Bearer ${token}`
@@ -49,7 +49,7 @@ const Profile = () => {
         );
 
         const notes = await axios.get(
-          "http://localhost:5000/api/notes",
+          "https://promblempilot.onrender.com/api/notes",
           {
             headers: {
               Authorization: `Bearer ${token}`
@@ -153,7 +153,7 @@ const Profile = () => {
               formData.profileImage instanceof File
                 ? URL.createObjectURL(formData.profileImage)
                 : formData.profileImage?.startsWith("/uploads")
-                  ? `http://localhost:5000${formData.profileImage}`
+                  ? `https://promblempilot.onrender.com${formData.profileImage}`
                   : formData.profileImage ||
                     "https://ui-avatars.com/api/?name=User"
             }

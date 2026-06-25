@@ -18,7 +18,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/problems');
+        const res = await axios.get('https://promblempilot.onrender.com/api/problems');
         const problems = res.data;
         
         const solved = problems.filter(p => p.status === 'Solved').length;
